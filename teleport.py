@@ -16,7 +16,7 @@ mc.postToChat("Our position : %f %f %f " % (pos.x, pos.y, pos.z))
 
 # Now teleport to other position
 x = 10
-y = 11
+y = 1000
 z = 12
 mc.player.setTilePos(x,y,z);
 
