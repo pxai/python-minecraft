@@ -12,7 +12,7 @@ time.sleep(2)
 # Get player position
 pos = mc.player.getPos()
 
-mc.postToChat('Building to block')
+mc.postToChat('Building tower, one walll at a time')
 x = pos.x
 y = pos.y
 z = pos.z
