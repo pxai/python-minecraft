@@ -2,6 +2,7 @@ from connection import Connection
 from vec3 import Vec3
 from event import BlockEvent
 from block import Block
+from entity import Entity
 import math
 from util import flatten
 
@@ -165,6 +166,14 @@ class Minecraft:
     def setting(self, setting, status):
         """Set a world setting (setting, status). keys: world_immutable, nametags_visible"""
         self.conn.send("world.setting", setting, 1 if bool(status) else 0)
+    
+    def showWarning(self, msg):
+        """Send a warning"""
+        self.conn.send("pello.warning", msg)
+    
+    def setEntity(self, *args):
+        """Set entity (x,y,z,id,[data])"""
+        self.conn.send("world.setEntity", intFloor(args))
 
     @staticmethod
     def create(address = "localhost", port = 4711):
